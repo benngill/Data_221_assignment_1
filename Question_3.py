@@ -1,13 +1,12 @@
-def dictOfListLength(inputList):
-    lengthOfListIndices = {}
-    for i in range(0,len(inputList)):
-        lengthOfKey = len(inputList[i]) # stores length of string i 
-        parity = "odd"
-        if lengthOfKey % 2 == 0: # switches parity to 'odd' if string is odd
-            parity = "even"
-        lengthOfListIndices[inputList[i]] = {"length":lengthOfKey, "parity": parity} # stores each string as a key with length info as value
-    return lengthOfListIndices
+def twoVariableListToExponentCalculator(inputList):
+    exponentMathResult = []
+    for i in range(0,len(inputList)): # unpacks input using for loop
+        baseX = inputList[i][0]
+        exponentY = inputList[i][1]
+        if exponentY >= 0: # skips pair if exponent is negative
+            exponentMathResult.append(baseX**exponentY) # stores valid results
+    return exponentMathResult
 
-foodsTest = ["apple", "orange", "banana", "grape"]
+pairs = [[5, 2], [3, -1], [4, 3], [2, 0]]
 
-dictOfListLength(foodsTest)
+twoVariableListToExponentCalculator(pairs)

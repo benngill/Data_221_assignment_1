@@ -1,13 +1,16 @@
-def dictOfListLength(inputList):
-    lengthOfListIndices = {}
-    for i in range(0,len(inputList)):
-        lengthOfKey = len(inputList[i]) # stores length of string i 
-        parity = "odd"
-        if lengthOfKey % 2 == 0: # switches parity to 'odd' if string is odd
-            parity = "even"
-        lengthOfListIndices[inputList[i]] = {"length":lengthOfKey, "parity": parity} # stores each string as a key with length info as value
-    return lengthOfListIndices
+import math
 
-foodsTest = ["apple", "orange", "banana", "grape"]
+def percentOfAreaOfLargerCircleThatSmallerCircleCovers(radiusOfCircle1, radiusOfCircle2):
+    if radiusOfCircle1 > 0 and radiusOfCircle2 > 0: # validates both radii are positive integers
+        areaOfCircle1 = math.pi*(radiusOfCircle1**2) # comuptes area of circle1
+        areaOfCircle2 = math.pi*(radiusOfCircle2**2) # comuptes area of circle2
+        percentOfCircleCovered = None
+        if areaOfCircle1 > areaOfCircle2: # checks which circle is larger
+            percentofCircleCovered = areaOfCircle2 / areaOfCircle1
+        else:
+            percentofCircleCovered = areaOfCircle1 / areaOfCircle2
+        return percentofCircleCovered # returns percent of area covered
+    else:
+        return "ERROR: one or more of the provided radii are not positive integers" # returns meaningful message
 
-dictOfListLength(foodsTest)
+percentOfAreaOfLargerCircleThatSmallerCircleCovers(10,8)

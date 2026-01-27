@@ -1,13 +1,15 @@
-def dictOfListLength(inputList):
-    lengthOfListIndices = {}
-    for i in range(0,len(inputList)):
-        lengthOfKey = len(inputList[i]) # stores length of string i 
-        parity = "odd"
-        if lengthOfKey % 2 == 0: # switches parity to 'odd' if string is odd
-            parity = "even"
-        lengthOfListIndices[inputList[i]] = {"length":lengthOfKey, "parity": parity} # stores each string as a key with length info as value
-    return lengthOfListIndices
+from random import random
 
-foodsTest = ["apple", "orange", "banana", "grape"]
+values = [random() for i in range(20)]
+x = random()
 
-dictOfListLength(foodsTest)
+largerValues = []
+exactMatch = None
+valuesSorted = sorted(values) # sorts the list
+for i in range(20):
+    if valuesSorted[i] >= x: # finds indices where list value >= x
+        if valuesSorted[i] == x:
+            exactMatch = i # stores index of exact match (if applicable)
+        largerValues.append(values[i])
+
+print(valuesSorted, "x:",x, "Exact Match is index:", exactMatch) # prints sorted list, value of x, matching index

@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 product = 1
 currentNumber = 1
 threshold = 100 # store threshold value
