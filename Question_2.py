@@ -1,4 +1,4 @@
-def dictOfListLength(inputList):
+def lengthAndParityOfListIndices(inputList):
     lengthOfListIndices = {}
     for i in range(0,len(inputList)):
         lengthOfKey = len(inputList[i]) # stores length of string i 
@@ -10,4 +10,4 @@ def dictOfListLength(inputList):
 
 foodsTest = ["apple", "orange", "banana", "grape"]
 
-dictOfListLength(foodsTest)
+lengthAndParityOfListIndices(foodsTest)
