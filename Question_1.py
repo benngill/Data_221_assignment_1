@@ -3,7 +3,7 @@ currentNumber = 1
 threshold = 100 # store threshold value
 i = 1
 
-while product <= threshold: # is it better practice to use a while loop that needs an i, or a for loop 
+while product <= threshold: # loops till threshold is exceeded 
     i = i+1
     product = currentNumber*i
     currentNumber = product # tracks current multiplier
